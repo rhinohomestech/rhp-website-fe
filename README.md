@@ -1,4 +1,4 @@
-# RHP Website UI/UX
+# RHP Website Frontend
 
 This repository contain relevant code files and documents for developing and deploying RHP information website/landing pages.
 
