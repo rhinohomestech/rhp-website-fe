@@ -26,6 +26,10 @@ spec:
                   key: RHP_API_BASE_URL
       imagePullSecrets:
         - name: docker-secret  # Image pull secret for GHCR
+      tolerations:
+        - key: "node-role.kubernetes.io/control-plane"
+          operator: "Exists"
+          effect: "NoSchedule"
 ---
 apiVersion: v1
 kind: Service
