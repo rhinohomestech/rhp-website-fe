@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rhp-website-fe-dev
+  namespace: rhp-website-fe-ns
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rhp-website-fe-dev
+  template:
+    metadata:
+      labels:
+        app: rhp-website-fe-dev
+    spec:
+      containers:
+        - name: rhp-website-fe-dev-container
+          image: ghcr.io/rhinohomestech/rhp-website-fe:COMMIT_SHA  # Replace with your GHCR image
+          ports:
+            - containerPort: 3000  # Next.js default port
+          env:
+            - name: RHP_API_BASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: rhp-website-fe-dev-config
+                  key: RHP_API_BASE_URL
+      imagePullSecrets:
+        - name: docker-secret  # Image pull secret for GHCR
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rhp-website-fe-dev-service
+  namespace: rhp-website-fe-ns
+spec:
+  selector:
+    app: rhp-website-fe-dev
+  ports:
+    - protocol: TCP
+      port: 3000  # Service port
+      targetPort: 3000  # Target port (matches the container port)
+  type: NodePort  # Use NodePort to expose the service on a static port
