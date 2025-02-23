@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rhp-website-fe-dev-config
+  namespace: rhp-website-fe-ns
+data:
+  RHP_API_BASE_URL: "https://204.12.192.154:80"  # Replace with your actual API base URL
