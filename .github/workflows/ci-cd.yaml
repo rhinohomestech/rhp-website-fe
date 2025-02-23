@@ -87,6 +87,7 @@ jobs:
       - name: Set KUBECONFIG
         run: |
           export KUBECONFIG=kubeconfig.yaml
+          echo "KUBECONFIG is set to: $KUBECONFIG"
 
       - name: Verify kubeconfig
         run: |
