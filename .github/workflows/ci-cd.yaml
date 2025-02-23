@@ -70,6 +70,7 @@ jobs:
 
       - name: Verify kubeconfig
         run: |
+            echo ${{ secrets.K8S_CONFIG }}
             cat kubeconfig.yaml
             kubectl config view
 
