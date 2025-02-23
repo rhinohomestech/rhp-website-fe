@@ -65,7 +65,7 @@ jobs:
       # Configure kubeconfig for self-hosted cluster
       - name: Configure kubeconfig
         run: |
-          echo "${{ secrets.K8S_CONFIG }}" > kubeconfig.yaml
+          echo ${{ secrets.K8S_CONFIG }} > kubeconfig.yaml
           export KUBECONFIG=kubeconfig.yaml
 
       - name: Verify kubeconfig
