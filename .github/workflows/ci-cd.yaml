@@ -68,6 +68,10 @@ jobs:
           echo "${{ secrets.K8S_CONFIG }}" > kubeconfig.yaml
           export KUBECONFIG=kubeconfig.yaml
 
+      - name: Verify kubeconfig
+        run: |
+            cat kubeconfig.yaml
+            kubectl config view
 
       # Apply ConfigMap
       - name: Apply ConfigMap
