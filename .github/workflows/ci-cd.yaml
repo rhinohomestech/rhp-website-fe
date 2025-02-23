@@ -62,15 +62,34 @@ jobs:
         with:
           version: 'latest'
 
-      # Configure kubeconfig for self-hosted cluster
-      - name: Configure kubeconfig
+      - name: Create kubeconfig file
         run: |
-          echo ${{ secrets.K8S_CONFIG }} > kubeconfig.yaml
+            cat <<EOF > kubeconfig.yaml
+            apiVersion: v1
+            kind: Config
+            clusters:
+              - name: my-cluster
+                cluster:
+                  server: ${{ secrets.K8S_API_SERVER_URL }}  # Replace with your Kubernetes API server URL
+                  insecure-skip-tls-verify: true  # Use only for testing; avoid in production
+            users:
+              - name: rhp-website-fe-service-account
+                user:
+                  token: ${{ secrets.K8S_CONFIG }}  # Use the service account token from the secret
+            contexts:
+              - name: my-context
+                context:
+                  cluster: my-cluster
+                  user: rhp-website-fe-service-account
+            current-context: my-context
+            EOF
+      # Configure kubeconfig for self-hosted cluster
+      - name: Set KUBECONFIG
+        run: |
           export KUBECONFIG=kubeconfig.yaml
 
       - name: Verify kubeconfig
         run: |
-            echo ${{ secrets.K8S_CONFIG }}
             cat kubeconfig.yaml
             kubectl config view
 
