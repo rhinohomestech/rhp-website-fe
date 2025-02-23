@@ -97,7 +97,7 @@ jobs:
       # Apply ConfigMap
       - name: Apply ConfigMap
         run: |
-          kubectl apply -f rhp-website-fe-dev-configmap.yaml -n ${{ env.K8S_NAMESPACE }}
+          kubectl --kubeconfig=kubeconfig.yaml apply -f rhp-website-fe-dev-configmap.yaml -n ${{ env.K8S_NAMESPACE }}
 
 
       # Replace COMMIT_SHA placeholder with the actual commit SHA
@@ -108,4 +108,4 @@ jobs:
       # Apply Deployment and Service
       - name: Apply Deployment and Service
         run: |
-          kubectl apply -f rhp-website-fe-dev-deployment-service.yaml -n ${{ env.K8S_NAMESPACE }}
+          kubectl --kubeconfig=kubeconfig.yaml apply -f rhp-website-fe-dev-deployment-service.yaml -n ${{ env.K8S_NAMESPACE }}
