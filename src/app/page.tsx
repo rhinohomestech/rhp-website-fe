@@ -1,102 +1,201 @@
+"use client";
 import Image from "next/image";
 
-export default function Home() {
+import "@/sass/home.scss";
+import { offeringsText } from "@/constants";
+import Link from "next/link";
+const Home = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className="home">
+      <section className="find-dream-property">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          src={"/3d.jpeg"}
+          width={1240}
+          height={627}
+          alt=""
+          className="img"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-          <li>RHP Website is about go live.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="info">
+          <h1>Find Your Dream Property</h1>
+          <p>
+            We build luxury and affordable homes and commercial spaces for our
+            clients at competitive costs, and we enable investors partner with
+            us at different stages of our projects
+          </p>
+
+          <div className="explore">
+            <button className="explore-btn">Explore Projects</button>
+            <button className="become">Become an Agent</button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      </section>
+
+      <section className="rhino-homes-container">
+        <div className="rhino-homes">
+          <h1>
+            Rhino Homes & <span className="text-[#FF5A3C]">Properties</span>
+            Ltd.
+          </h1>
+          <p>
+            <span className="red-font">OUR</span>
+            <span className="mission"> MISSION </span>- We are committed to
+            transforming dreams into reality by creating exceptional living and
+            working spaces. Our mission is to be a leading residential and
+            commercial real estate developer, dedicated to delivering
+            innovative, sustainable, and high-quality projects that enhance
+            communities and exceed the expectations of our stakeholders.
+          </p>
+          <p className="vision">
+            <span className="red-font">OUR</span>
+            <span className="mission"> VISION </span>- To be the benchmark in
+            the real estate industry across Africa recognized for our visionary
+            approach, impeccable craftsmanship, and unwavering commitment to
+            creating spaces that inspire and endure.
+          </p>
+          <button>read more</button>
+        </div>
+        <div className="rhino-photos">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            width={590}
+            height={549}
+            src="/rhino-homes.png"
+            alt=""
+            className="img"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        </div>
+      </section>
+
+      <section className="our-offerings-container">
+        <Image
+          src="/our-offerings.png"
+          width={424}
+          height={485}
+          className="img"
+          alt=""
+        />
+        <div className="our-offerings">
+          <div className="content">
+            <h1>
+              Our <span className="text-[#FF5A3C]">Offerings</span>
+            </h1>
+            <p>
+              At Rhino Homes & Properties Ltd, we specialize in delivering
+              exceptional properties and investment opportunities tailored to
+              your needs.
+            </p>
+            <ul className="list-item-container">
+              {offeringsText.map((item, index) => (
+                <li className="listItem" key={index}>
+                  <Image
+                    width={18}
+                    height={20}
+                    src="/red-checkbox.png"
+                    alt=""
+                  />
+                  <span className="listItemText">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="verified-agent">
+        <div className="content">
+          <h1>Become a verified agent</h1>
+          <p>
+            Join RHP's Verified Agent Network and Unlock Nationwide
+            Opportunities! As a verified agent, you'll gain access to exclusive
+            properties across the country, a personalized dashboard to track
+            your commissions in real time, and guaranteed payouts on every
+            successful deal.
+          </p>
+
+          <Link href={"/get-started"}>
+            <button>Get Started</button>
+          </Link>
+        </div>
+      </section>
+
+      <section className="explore-latest-projects">
+        <header>
+          <h1>
+            Explore Our <span className="text-[#FF5A3C]">Latest Projects</span>
+          </h1>
+          <button>view more</button>
+        </header>
+
+        <div className="project-photos">
           <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+            width={1148}
+            height={648}
+            src="/project.png"
+            alt=""
+            className="img"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        </div>
+      </section>
+
+      <section className="invest-with-us">
+        <Image width={279} height={334} src="/invest-with-us.png" alt="" />
+        <div className="content">
+          <h3>
+            Invest <span className="text-[#FF5A3C]">With Us</span>
+          </h3>
+          <p>
+            Invest with RHP – Your Path to Profitable Growth At RHP, we offer
+            lucrative investment opportunities designed to maximize your
+            returns. Whether you’re looking to diversify your portfolio or
+            secure a stable income, our properties are strategically developed
+            to ensure long-term value. Partner with us and take a step towards
+            smart, secure, and rewarding investments.
+          </p>
+          <Link href={"/invest"}>
+            <button>Explore</button>
+          </Link>
+        </div>
+      </section>
+
+      <section className="subscribe">
+        <div className="content">
+          <h1>Subscribe to our newsletter </h1>
+          <div className="input">
+            <input type="text" />
+            <button>Subscribe</button>
+          </div>
+          <p>
+            Subscribe now to receive the latest property listings, investment
+            opportunities, and exclusive deals tailored just for you. Don’t miss
+            your chance to secure your dream property or make a profitable
+            investment.
+          </p>
+        </div>
+      </section>
+
+      <section className="quote">
+        <div className="content">
           <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+            width={72}
+            height={60}
+            src="/quotation.png"
+            alt=""
+            className="img"
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <p>
+            Thrilled with the finished product from Rhino Homes and Properties!
+            <br />
+            They were a pleasure to work with throughout the entire construction
+            process. From initial design consultations to final touches, their
+            attention to detail and commitment to quality were exceptional.
+            We’re truly living in our dream home, thanks to Rhino Homes
+          </p>
+
+          <span>Ms. Kehinde</span>
+        </div>
+      </section>
     </div>
   );
-}
+};
+
+export default Home;
