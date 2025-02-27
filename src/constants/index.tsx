@@ -2,7 +2,7 @@
 export const navbarItems = [
   {
     title: "Home",
-    url: "/home",
+    url: "/",
   },
   {
     title: "About",

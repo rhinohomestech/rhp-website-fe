@@ -1,15 +1,25 @@
-"use client";
-import Image from "next/image";
+// import image section from the public directory
+import findDream from "@/assets/images/3d.jpeg";
+import rhinoHomes from "@/assets/images/rhino-homes.png";
+import ourOffering from "@/assets/images/our-offerings.png";
+import redCheckBox from "@/assets/images/red-checkbox.png";
+import verifiedAgent from "@/assets/images/verified-agent.jpeg";
+import project from "@/assets/images/project.png";
+import investWithUs from "@/assets/images/invest-with-us.png";
+import quotation from "@/assets/images/quotation.png";
+// end of image import
 
-import "@/sass/home.scss";
+import Image from "next/image";
+import "../sass/home.scss";
 import { offeringsText } from "@/constants";
 import Link from "next/link";
+
 const Home = () => {
   return (
     <div className="home">
       <section className="find-dream-property">
         <Image
-          src={"/3d.jpeg"}
+          src={findDream}
           width={1240}
           height={627}
           alt=""
@@ -25,8 +35,12 @@ const Home = () => {
           </p>
 
           <div className="explore">
-            <button className="explore-btn">Explore Projects</button>
-            <button className="become">Become an Agent</button>
+            <Link href={"/explore"}>
+              <button className="explore-btn">Explore Projects</button>
+            </Link>
+            <Link href={"/agent"}>
+              <button className="become">Become an Agent</button>
+            </Link>
           </div>
         </div>
       </section>
@@ -59,7 +73,7 @@ const Home = () => {
           <Image
             width={590}
             height={549}
-            src="/rhino-homes.png"
+            src={rhinoHomes}
             alt=""
             className="img"
           />
@@ -68,7 +82,7 @@ const Home = () => {
 
       <section className="our-offerings-container">
         <Image
-          src="/our-offerings.png"
+          src={ourOffering}
           width={424}
           height={485}
           className="img"
@@ -87,12 +101,7 @@ const Home = () => {
             <ul className="list-item-container">
               {offeringsText.map((item, index) => (
                 <li className="listItem" key={index}>
-                  <Image
-                    width={18}
-                    height={20}
-                    src="/red-checkbox.png"
-                    alt=""
-                  />
+                  <Image width={18} height={20} src={redCheckBox} alt="" />
                   <span className="listItemText">{item}</span>
                 </li>
               ))}
@@ -102,6 +111,13 @@ const Home = () => {
       </section>
 
       <section className="verified-agent">
+        <Image
+          width={1240}
+          height={411}
+          alt=""
+          className="img"
+          src={verifiedAgent}
+        />
         <div className="content">
           <h1>Become a verified agent</h1>
           <p>
@@ -112,9 +128,9 @@ const Home = () => {
             successful deal.
           </p>
 
-          <Link href={"/get-started"}>
-            <button>Get Started</button>
-          </Link>
+            <Link href={"/get-started"} className="mx-auto">
+              <button>Get Started</button>
+            </Link>
         </div>
       </section>
 
@@ -130,7 +146,7 @@ const Home = () => {
           <Image
             width={1148}
             height={648}
-            src="/project.png"
+            src={project}
             alt=""
             className="img"
           />
@@ -138,7 +154,7 @@ const Home = () => {
       </section>
 
       <section className="invest-with-us">
-        <Image width={279} height={334} src="/invest-with-us.png" alt="" />
+        <Image width={279} height={334} src={investWithUs} alt="" />
         <div className="content">
           <h3>
             Invest <span className="text-[#FF5A3C]">With Us</span>
@@ -178,7 +194,7 @@ const Home = () => {
           <Image
             width={72}
             height={60}
-            src="/quotation.png"
+            src={quotation}
             alt=""
             className="img"
           />

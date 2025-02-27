@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Head from "next/head";
 import "./globals.css";
-// import "../sass/global.scss"; //
+import "../sass/global.scss"; //
 import { Poppins } from "next/font/google";
+import LayoutWrapper from "@/components/LayoutWrapper/LayoutWrapper";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -22,10 +22,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="preload" as="image" href="https://your-cdn.com/image.webp" />
-      </Head>
-      <body className={`${poppins.variable}`}>{children}</body>
+      <body className={`${poppins.variable}`}>
+        <LayoutWrapper>{children}</LayoutWrapper>
+      </body>
     </html>
   );
 }
