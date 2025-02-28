@@ -5,6 +5,7 @@ import Link from "next/link";
 
 
 const Home = () => {
+
   return (
     <div className="home">
       <section className="find-dream-property">
