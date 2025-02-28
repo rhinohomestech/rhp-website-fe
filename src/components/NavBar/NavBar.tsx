@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import appIcon from "@/assets/icons/favicon.ico";
 import { navbarItems } from "@/constants";
 import "./Navbar.scss";
 
@@ -25,8 +24,8 @@ const NavBar = () => {
   return (
     <nav>
       <Image
-        src={appIcon}
-        alt="Logo"
+        src="/favicon.ico"
+        alt=""
         width={61}
         height={39}
         className="cursor-pointer"

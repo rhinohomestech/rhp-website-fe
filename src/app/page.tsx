@@ -1,25 +1,15 @@
-// import image section from the public directory
-import findDream from "@/assets/images/3d.jpeg";
-import rhinoHomes from "@/assets/images/rhino-homes.png";
-import ourOffering from "@/assets/images/our-offerings.png";
-import redCheckBox from "@/assets/images/red-checkbox.png";
-import verifiedAgent from "@/assets/images/verified-agent.jpeg";
-import project from "@/assets/images/project.png";
-import investWithUs from "@/assets/images/invest-with-us.png";
-import quotation from "@/assets/images/quotation.png";
-// end of image import
-
 import Image from "next/image";
 import "../sass/home.scss";
 import { offeringsText } from "@/constants";
 import Link from "next/link";
+
 
 const Home = () => {
   return (
     <div className="home">
       <section className="find-dream-property">
         <Image
-          src={findDream}
+          src="/3d.jpeg"
           width={1240}
           height={627}
           alt=""
@@ -73,7 +63,7 @@ const Home = () => {
           <Image
             width={590}
             height={549}
-            src={rhinoHomes}
+            src="/rhino-homes.png"
             alt=""
             className="img"
           />
@@ -82,11 +72,12 @@ const Home = () => {
 
       <section className="our-offerings-container">
         <Image
-          src={ourOffering}
+          src="/our-offerings.png"
           width={424}
           height={485}
           className="img"
           alt=""
+          unoptimized={true}
         />
         <div className="our-offerings">
           <div className="content">
@@ -101,7 +92,12 @@ const Home = () => {
             <ul className="list-item-container">
               {offeringsText.map((item, index) => (
                 <li className="listItem" key={index}>
-                  <Image width={18} height={20} src={redCheckBox} alt="" />
+                  <Image
+                    width={18}
+                    height={20}
+                    src={"/red-checkbox.png"}
+                    alt=""
+                  />
                   <span className="listItemText">{item}</span>
                 </li>
               ))}
@@ -116,7 +112,7 @@ const Home = () => {
           height={411}
           alt=""
           className="img"
-          src={verifiedAgent}
+          src="/verified-agent.jpeg"
         />
         <div className="content">
           <h1>Become a verified agent</h1>
@@ -128,9 +124,9 @@ const Home = () => {
             successful deal.
           </p>
 
-            <Link href={"/get-started"} className="mx-auto">
-              <button>Get Started</button>
-            </Link>
+          <Link href={"/get-started"} className="mx-auto">
+            <button>Get Started</button>
+          </Link>
         </div>
       </section>
 
@@ -146,7 +142,7 @@ const Home = () => {
           <Image
             width={1148}
             height={648}
-            src={project}
+            src="/project.png"
             alt=""
             className="img"
           />
@@ -154,7 +150,7 @@ const Home = () => {
       </section>
 
       <section className="invest-with-us">
-        <Image width={279} height={334} src={investWithUs} alt="" />
+        <Image width={279} height={334} src="/invest-with-us.png" alt="" />
         <div className="content">
           <h3>
             Invest <span className="text-[#FF5A3C]">With Us</span>
@@ -194,7 +190,7 @@ const Home = () => {
           <Image
             width={72}
             height={60}
-            src={quotation}
+            src="/quotation.png"
             alt=""
             className="img"
           />
