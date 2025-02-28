@@ -24,9 +24,10 @@ const NavBar = () => {
   return (
     <nav>
       <Image
-        src="/favicon.ico"
+        src="/applogo.png"
         alt=""
         width={61}
+        unoptimized={true}
         height={39}
         className="cursor-pointer"
       />
