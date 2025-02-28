@@ -1,7 +1,5 @@
 "use client";
 
-import whiteLogo from "@/assets/images/white-app-icon.png";
-import cardPhoto from "@/assets/images/card.png";
 import { footerItems } from "@/constants";
 import "./Footer.scss";
 import Image from "next/image";
@@ -22,7 +20,7 @@ const Footer = () => {
         <div className="the-real-footer">
           <div className="left-box">
             <Image
-              src={whiteLogo}
+              src="/white-app-icon.png"
               alt=""
               width={112}
               height={72}
@@ -72,7 +70,7 @@ const Footer = () => {
               ))}
             </div>
             <Image
-              src={cardPhoto}
+              src="/card.png"
               width={249}
               height={28}
               className=""
