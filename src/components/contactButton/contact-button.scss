@@ -1,0 +1,68 @@
+.contactButtonContainer {
+  font-family: Poppins;
+  color: white;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  a {
+    .div-image {
+      background-color: #fff;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 67px;
+      cursor: pointer;
+      height: 67px;
+ 
+
+    
+    }
+  }
+  .contactInfo {
+    width: 150px;
+    height: 43px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    h4 {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 25.28px;
+      letter-spacing: 0%;
+    }
+
+    a {
+      position: relative;
+      text-decoration: none;
+      padding-right: 20px;
+      width: fit-content;
+
+      h6 {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17.7px;
+        letter-spacing: 0%;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 90%;
+        height: 2px;
+        background: white;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease-in-out;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}

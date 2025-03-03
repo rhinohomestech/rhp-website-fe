@@ -3,19 +3,18 @@ import "../sass/home.scss";
 import { offeringsText } from "@/constants";
 import Link from "next/link";
 
-
 const Home = () => {
-
   return (
     <div className="home">
       <section className="find-dream-property">
-        <Image
-          src="/3d.jpeg"
-          width={1240}
-          height={627}
-          alt=""
-          className="img"
-        />
+       
+          <Image
+            src="/3d.jpeg"
+            width={1240}
+            height={627}
+            alt=""
+            className="img"
+          />
 
         <div className="info">
           <h1>Find Your Dream Property</h1>
@@ -26,7 +25,7 @@ const Home = () => {
           </p>
 
           <div className="explore">
-            <Link href={"/explore"}>
+            <Link href={"/projects"}>
               <button className="explore-btn">Explore Projects</button>
             </Link>
             <Link href={"/agent"}>
