@@ -96,7 +96,7 @@ const Contact = () => {
         {/* Right Hand Side */}
         <div className="rightHandSide">
           <h1>Reach Out</h1>
-          <div className="form" method="post" onSubmit={() => handleSubmit}>
+          <div className="form">
             <InputField
               label="Name"
               autoComplete="off"
@@ -107,6 +107,8 @@ const Contact = () => {
               onChange={handleChange}
               error={errors.name}
             />
+
+            <button onClick={handleSubmit}></button>
           </div>
         </div>
       </div>
