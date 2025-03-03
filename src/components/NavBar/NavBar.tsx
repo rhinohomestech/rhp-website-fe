@@ -16,6 +16,12 @@ const NavBar = () => {
       "/services": "Our Services",
       "/contact": "Contact Us",
       "/get-started": "Get Started",
+      "/agents": "Agents",
+      "/invest": "Invest",
+      "/faqs": "Frequently Asked Questions",
+      "/verified-agents": "Verified Agents",
+      "/news": "News",
+      "/projects": "Projects",
     };
 
     document.title = titles[pathname] || "Rhino Homes";
@@ -23,14 +29,16 @@ const NavBar = () => {
 
   return (
     <nav>
-      <Image
-        src="/applogo.png"
-        alt=""
-        width={61}
-        unoptimized={true}
-        height={39}
-        className="cursor-pointer"
-      />
+      <Link href={"/"}>
+        <Image
+          src="/applogo.png"
+          alt=""
+          width={61}
+          height={39}
+          className="cursor-pointer"
+        />
+      </Link>
+
       <div className="nav-items">
         {navbarItems.map((item, index) => (
           <Link href={item.url} key={index}>

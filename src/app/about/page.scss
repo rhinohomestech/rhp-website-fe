@@ -1,15 +1,14 @@
 .about {
-  border: 1px solid;
   display: flex;
   flex-direction: column;
   margin-top: 124px;
+  justify-content: center;
+  align-items: center;
   font-family: Poppins;
 
   header {
     width: 1089px;
     height: 64px;
-    border: 1px solid;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -30,8 +29,143 @@
     }
   }
 
-
   section.first-about-photo {
-    
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+    .img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  section.rhino-homes {
+    margin-top: 96px;
+    height: 635px;
+    max-width: 1037px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .firstImg {
+      width: 468px;
+    }
+    .mission-box {
+      width: 485px;
+      height: 392px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h1 {
+        width: 448px;
+        height: 114px;
+        font-weight: 700;
+        font-size: 45px;
+        line-height: 56.88px;
+      }
+      p {
+        width: 100%;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 25.28px;
+        letter-spacing: 0%;
+        text-align: justify;
+      }
+    }
+  }
+
+  section.meet-our-team {
+    width: 100%;
+    height: 505px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 119px;
+
+    .content {
+      text-align: center;
+      width: 791px;
+      height: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+
+      h1 {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 45.5px;
+        letter-spacing: 0%;
+        text-align: center;
+      }
+
+      p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20.22px;
+        letter-spacing: 0%;
+        text-align: center;
+      }
+
+      button {
+        background-color: white;
+        color: black;
+        padding: 20px 40px;
+        border-radius: 1000px;
+      }
+    }
+
+    .photoContainer {
+      width: 100%;
+
+      .img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+      }
+    }
+  }
+
+  section.inspiration {
+    width: 100%;
+    margin-top: 113px;
+    height: 434px;
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 75px;
+    .content {
+      width: 838px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 180px;
+
+      p {
+        text-align: center;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17.7px;
+        letter-spacing: 0%;
+        text-align: center;
+      }
+      span {
+        color: #3b3b3b;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 17.7px;
+        letter-spacing: 0%;
+        text-align: center;
+      }
+    }
   }
 }
