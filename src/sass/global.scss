@@ -2,12 +2,14 @@ html {
   background-color: white;
   body {
     max-width: 1440px;
-    margin: 50px auto 20px auto;
     padding: 0 20px;
+    margin-left: auto;
+    margin-right: auto;
+
   }
   font-family: "poppins";
   &::-webkit-scrollbar {
-    width: 12px; /* Width of the scrollbar */
+    width: 12px;
   }
 
   /* Track (background of the scrollbar) */

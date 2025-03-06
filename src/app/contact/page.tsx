@@ -14,7 +14,9 @@ const Contact = () => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    event: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({
@@ -49,6 +51,8 @@ const Contact = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       console.log("Form Submitted:", formData);
+    } else {
+      console.log(errors);
     }
   };
   return (
@@ -97,18 +101,56 @@ const Contact = () => {
         <div className="rightHandSide">
           <h1>Reach Out</h1>
           <div className="form">
+            {/* form Item for NAME */}
             <InputField
               label="Name"
-              autoComplete="off"
               type="text"
-              name="name"
-              placeholder="Enter your  Name"
               value={formData.name}
-              onChange={handleChange}
               error={errors.name}
+              name="name"
+              onChange={handleChange}
+            />
+            <InputField
+              label="Email"
+              type="text"
+              value={formData.email}
+              error={errors.email}
+              name="email"
+              onChange={handleChange}
             />
 
-            <button onClick={handleSubmit}></button>
+            <InputField
+              label="Phone"
+              type="text"
+              value={formData.phone}
+              error={errors.phone}
+              name="phone"
+              onChange={handleChange}
+            />
+
+            <InputField
+              label="Subject"
+              type="text"
+              value={formData.subject}
+              error={errors.subject}
+              name="subject"
+              onChange={handleChange}
+            />
+
+            <div className="form-item">
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                autoComplete="off"
+                required
+                className="text-area"
+                onChange={handleChange} // Ensure state updates
+              />
+              <label htmlFor="message">Message</label>
+              <span className="error">{errors.message}</span>
+            </div>
+            <button onClick={handleSubmit}>Submit</button>
           </div>
         </div>
       </div>
