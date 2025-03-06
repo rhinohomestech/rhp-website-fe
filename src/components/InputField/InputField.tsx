@@ -3,32 +3,36 @@ import "./InputField.scss";
 
 interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
-  placeholder?: string;
-  error?: string;
+  error: string;
+  name: string;
+  type: string;
+  value: string;
 }
 
 const InputField: React.FC<InputFieldProps> = ({
   type,
   label,
   error,
-  placeholder,
+  name,
+  value,
+  onChange,
   ...otherProps
 }) => {
   return (
-    <label htmlFor={label} className="general-label">
-      {label}
+    <div className="form-item">
       <input
-        id={label}
-        name={type}
-        autoComplete="false"
-        autoSave="off"
         type={type}
-        placeholder={placeholder}
+        id={name}
+        name={name} 
+        value={value}
+        autoComplete="notfoundDoNotComplete"
+        required
+        onChange={onChange} // Ensure state updates
         {...otherProps}
-        className="general-input"
       />
-      <span className="error-message">{error}</span>
-    </label>
+      <label htmlFor={name}>{label}</label>
+      {error && <span className="error">{error}</span>}
+    </div>
   );
 };
 
