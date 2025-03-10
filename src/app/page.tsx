@@ -14,6 +14,7 @@ const Home = () => {
             height={627}
             alt=""
             className="img"
+            priority
           />
 
         <div className="info">
@@ -65,6 +66,7 @@ const Home = () => {
             height={549}
             src="/rhino-homes.png"
             alt=""
+            priority
             className="img"
           />
         </div>
