@@ -23,6 +23,7 @@ const About = () => {
           width={1122}
           height={400}
           className="img"
+          priority
         />
       </section>
 
@@ -38,8 +39,7 @@ const About = () => {
         </div>
         <div className="mission-box">
           <h1>
-            Rhino Properties &{" "}
-            <span className="text-[#FF5A3C]">Homes Ltd.</span>
+            Rhino Properties &<span className="text-[#FF5A3C]">Homes Ltd.</span>
           </h1>
 
           <p>
@@ -83,6 +83,7 @@ const About = () => {
             alt=""
             width={1235}
             height={264}
+            priority
           />
         </div>
       </section>

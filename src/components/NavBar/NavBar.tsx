@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { navbarItems } from "@/constants";
 import "./Navbar.scss";
+import Buttton from "../button/Buttton";
 
 const NavBar = () => {
   const pathname = usePathname();
@@ -51,12 +52,24 @@ const NavBar = () => {
         ))}
       </div>
       <div className="contact-buttons">
-        <Link href={"/contact"}>
-          <button className="contact">Contact</button>
-        </Link>
-        <Link href={"/get-started"}>
-          <button className="get-started">Get Started</button>
-        </Link>
+        <Buttton
+          backgroundColor="white"
+          height="38px"
+          width="84px"
+          href="/contact"
+          label="Contact"
+          border
+          fontWeight={400}
+        />
+        <Buttton
+          backgroundColor="black"
+          height="38px"
+          width="105px"
+          href="/get-started"
+          label="Get Started"
+          border
+          fontWeight={400}
+        />
       </div>
     </nav>
   );
